@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/qa-collection.schema.json",
+  "title": "QACollection",
+  "type": "array",
+  "minItems": 3,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "question",
+      "answer",
+      "evidence_span",
+      "type"
+    ],
+    "properties": {
+      "question": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Краткий, усечённый или эллиптический вопрос, сформулированный на основе одного факта."
+      },
+      "answer": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Краткий точный ответ на вопрос строго на основе текста."
+      },
+      "evidence_span": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Дословный непрерывный фрагмент текста, подтверждающий ответ."
+      },
+      "type": {
+        "type": "string",
+        "enum": ["elliptical"],
+        "description": "Тип примера."
+      }
+    }
+  }
+}
