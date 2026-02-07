@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.org/schemas/qa-item.schema.json",
+    "title": "QAItem",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "question",
+      "type"
+    ],
+    "properties": {
+      "question": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Разработанный перефразированный вопрос."
+      },
+      "type": {
+        "type": "string",
+        "description": "Тип примера/задачи.",
+        "enum": [
+          "paraphrasing"
+        ]
+      }
+    }
+  }
